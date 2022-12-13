@@ -1,0 +1,27 @@
+{
+    "name": "SB baidu",
+    "description": "small && beautiful baidu",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "./js/background.js"
+    },
+    "permissions": ["tabs", "storage", "activeTab", "scripting"],
+    "action": {
+      "default_popup": "./popup.html"
+    },
+    "options_page": "./options.html",
+    "content_scripts": [
+        {
+            "js": [
+                "js/content.js"
+            ],
+            "matches": [
+                "*://*.baidu.com/*"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "*://*.baidu.com/*"
+    ]
+  }
